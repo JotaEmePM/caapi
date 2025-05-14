@@ -5,7 +5,7 @@ export class AppService {
   private readonly logger = new Logger(AppService.name);
 
   getHello(): string {
-    this.logger.log(`Hello World! method called from env: ${process.env.APP_ENV}`);
+    this.logger.log(`Hello World! method called from envsss: ${process.env.APP_ENV}`);
     return 'Hello World!';
   }
 }
