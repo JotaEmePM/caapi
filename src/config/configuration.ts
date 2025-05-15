@@ -5,8 +5,8 @@ export default () => ({
 })
 
 export const getMongoConnectionString = (): string => {
-    const cnnstr = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_USERNAME}@${process.env.MONGO_URL}/${process.env.MONGO_DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`
-    Logger.log(`MongoDBConnectionString: ${cnnstr}`, 'MongoDB Connection String')
+    const cnnstr = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_URL}/${process.env.MONGO_DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`
+
     return cnnstr
 }
 
