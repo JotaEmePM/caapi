@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import configuration, { getMongoConnectionString } from './config/configuration';
 import { MongooseModule } from '@nestjs/mongoose';
+import { CatsModule } from './cats/cats.module';
 
 @Module({
   imports: [
@@ -11,7 +12,8 @@ import { MongooseModule } from '@nestjs/mongoose';
       isGlobal: true,
       load: [configuration]
     }),
-    MongooseModule.forRoot(getMongoConnectionString())
+    MongooseModule.forRoot(getMongoConnectionString()),
+    CatsModule
   ],
   controllers: [AppController],
   providers: [AppService],

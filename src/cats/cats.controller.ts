@@ -4,7 +4,7 @@ import { CreateCatDto } from './cats.interfaces';
 import { Cat } from 'src/schemas/cat.schema';
 
 
-@Controller()
+@Controller('cats')
 export class CatsController {
     constructor(private readonly catService: CatsService) { }
 
