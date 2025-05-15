@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import configuration from './config/configuration';
+import configuration, { getMongoConnectionString } from './config/configuration';
 import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
@@ -11,7 +11,7 @@ import { MongooseModule } from '@nestjs/mongoose';
       isGlobal: true,
       load: [configuration]
     }),
-    MongooseModule.forRoot(`${process.env.MONGO_URI}`)
+    MongooseModule.forRoot(getMongoConnectionString())
   ],
   controllers: [AppController],
   providers: [AppService],
